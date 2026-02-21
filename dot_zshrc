@@ -4,6 +4,8 @@ source ~/.antidote/antidote.zsh
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
 
+##Defaults##
+export EDITOR=nano
 ##ON MAC. Point to zsh completions installed via homebrew##
     if type brew &>/dev/null; then
      FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
