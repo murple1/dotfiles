@@ -1,4 +1,4 @@
-# .zsh_plugins.txt
+#dd .zsh_plugins.txt
 zsh-users/zsh-autosuggestions
 #zsh-users/zsh-syntax-highlighting
 zdharma-continuum/fast-syntax-highlighting
