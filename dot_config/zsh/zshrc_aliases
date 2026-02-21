@@ -2,3 +2,4 @@
 alias config="micro ~/.zshrc"
 alias plugins="micro ~/.zsh_plugins.txt"
 alias ls=eza
+alias cd=z
