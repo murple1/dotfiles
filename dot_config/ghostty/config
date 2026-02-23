@@ -1,14 +1,20 @@
+##to start at login
+initial-window = false
+
 ##APPEARANCE
 theme = Adventure Time
 font-size = 16
 font-family = SpaceMono Nerd Font Mono
 gtk-tabs-location = bottom
+
 ##quick-terminal
 quick-terminal-position = right
-quick-terminal-size = 900px
+quick-terminal-size = 40%
+
 ##other settings
 confirm-close-surface = false
 clipboard-read = allow
 clipboard-write = allow
+
 #KEYBINDS
 keybind = global:ctrl+space=toggle_quick_terminal
