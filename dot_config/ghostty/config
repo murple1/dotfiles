@@ -9,7 +9,8 @@ gtk-tabs-location = bottom
 
 ##quick-terminal
 quick-terminal-position = right
-quick-terminal-size = 40%
+quick-terminal-size = 800px
+quick-terminal-animation-duration = 0
 
 ##other settings
 confirm-close-surface = false

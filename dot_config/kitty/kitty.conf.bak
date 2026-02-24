@@ -14,7 +14,7 @@ font_size	18.0
 # END_KITTY_FONTS
 
 # BEGIN_KITTY_THEME
-# Birds Of Paradise
+# Everforest Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
 
