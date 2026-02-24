@@ -1,8 +1,8 @@
 
 {{- if eq .chezmoi.os "darwin" -}}
-{{-   include "config.fish_darwin" -}}
+{{-   include "~/.config/fish/config.fish_darwin" -}}
 {{- else if eq .chezmoi.os "linux" -}}
-{{-   include "config.fish_linux" -}}
+{{-   include "~/.config/fish/config.fish_linux" -}}
 {{- end -}}
 
 
