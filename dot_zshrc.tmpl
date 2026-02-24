@@ -1,13 +1,5 @@
 {{- if eq .chezmoi.os "darwin" -}}
-{{-   include ".chezmoitemplates/.zshrc_darwin" -}}
+{{-   include ".chezmoitemplates/darwin/.zshrc_darwin" -}}
 {{- else if eq .chezmoi.os "linux" -}}
-{{-   include ".chezmoitemplates/.zshrc_linux" -}}
+{{-   include ".chezmoitemplates/linux/.zshrc_linux" -}}
 {{- end -}}
-
-
-##ALT
-#{{ if eq .chezmoi.os "darwin" -}}
-## macOS .bashrc contents
-#{{ else if eq .chezmoi.os "linux" -}}
-## Linux .bashrc contents
-#{{ end -}}/**/

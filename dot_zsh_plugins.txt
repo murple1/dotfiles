@@ -4,8 +4,6 @@ zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-completions
 
-#romkatv/powerlevel10k
-
 # Oh-my-zsh dependency management
 getantidote/use-omz
 
