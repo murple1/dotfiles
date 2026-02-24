@@ -1,0 +1,13 @@
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   include ".bashrc_darwin" -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   include ".bashrc_linux" -}}
+{{- end -}}
+
+
+##ALT
+#{{ if eq .chezmoi.os "darwin" -}}
+## macOS .bashrc contents
+#{{ else if eq .chezmoi.os "linux" -}}
+## Linux .bashrc contents
+#{{ end -}}/**/

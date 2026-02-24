@@ -1,0 +1,15 @@
+
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   include "config.fish_darwin" -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   include "config.fish_linux" -}}
+{{- end -}}
+
+
+##ALT
+#{{ if eq .chezmoi.os "darwin" -}}
+## macOS config.fish contents
+#{{ else if eq .chezmoi.os "linux" -}}
+## Linux config.fish contents
+#{{ end -}}/**/
+
