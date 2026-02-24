@@ -1,5 +1,67 @@
-{{- if eq .chezmoi.os "darwin" -}}
-{{-   include ".chezmoitemplates/darwin/.zshrc_darwin" -}}
-{{- else if eq .chezmoi.os "linux" -}}
-{{-   include ".chezmoitemplates/linux/.zshrc_linux" -}}
-{{- end -}}
+fastfetch
+# source antidote https://antidote.sh/install
+source ~/.antidote/antidote.zsh
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
+
+
+{{ if eq .chezmoi.os "linux" -}}
+# Chezmoi Linux .zshrc contents
+source /usr/share/cachyos-zsh-config/cachyos-config.zsh
+
+{{ else if eq .chezmoi.os "darwin" -}}
+# MACOS .zshrc contents
+##ON MAC. Point to zsh completions installed via homebrew##
+    if type brew &>/dev/null; then
+     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+     autoload -Uz compinit
+     compinit
+    fi
+{{ end -}}
+
+#BOTH MAC AND LINUX
+
+source ~/.config/zsh/zshrc_aliases
+
+#Shell Integrations
+    ##spf cd-on-quit##
+spf() {
+    os=$(uname -s)
+
+    # Linux
+    if [[ "$os" == "Linux" ]]; then
+        export SPF_LAST_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/superfile/lastdir"
+    fi
+
+    # macOS
+    if [[ "$os" == "Darwin" ]]; then
+        export SPF_LAST_DIR="$HOME/Library/Application Support/superfile/lastdir"
+    fi
+
+    command spf "$@"
+
+    [ ! -f "$SPF_LAST_DIR" ] || {
+        . "$SPF_LAST_DIR"
+        rm -f -- "$SPF_LAST_DIR" > /dev/null
+    }
+}
+
+
+    ##yazi cd-on-quit##
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+    ##fzf fuzzy search
+
+##Defaults##
+export EDITOR=micro
+
+eval "$(zoxide init zsh)"
+# Shell themeing # Install Starship https://starship.rs/guide/
+eval "$(starship init zsh)"
