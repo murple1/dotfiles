@@ -1,4 +1,27 @@
+<<<<<<< Updated upstream
+=======
+{{ if eq .chezmoi.os "darwin" -}}
+# macOS CONTENTS
+
+{{ else if eq .chezmoi.os "linux" -}}
+# LINUX CONTENTS
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias hw='hwinfo --short'      
+# Get fastest mirrors
+alias mirror="sudo cachyos-rate-mirrors"                             # Hardware Info
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+{{ end -}}
+
+>>>>>>> Stashed changes
 #BOTH MAC AND LINUX
+alias please='sudo'
 alias plugins="micro ~/.zsh_plugins.txt"
 # Replace ls with eza
 alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
