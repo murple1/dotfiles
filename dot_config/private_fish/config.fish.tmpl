@@ -1,6 +1,24 @@
+if status is-interactive
+#auto-start Zellij
+     # Configure auto-attach/exit to your likings (default is off).
+     set ZELLIJ_AUTO_ATTACH true
+     set ZELLIJ_AUTO_EXIT false
+     if not set -q ZELLIJ
+         if test "$ZELLIJ_AUTO_ATTACH" = "true"
+             zellij attach -c home
+         else
+             zellij
+         end
+     
+         if test "$ZELLIJ_AUTO_EXIT" = "true"
+             kill $fish_pid
+         end
+     end
+end
+
 ## Run fastfetch as welcome message
 function fish_greeting
-    fastfetch
+    #fastfetch 
 end
 
 
@@ -8,11 +26,11 @@ end
 ##----Chezmoi Linux config.fish.tmpl contents--------------------------
 
 ## Source from conf.d before our fish config
-source /usr/share/cachyos-fish-config/conf.d/done.fish
+#source /usr/share/cachyos-fish-config/conf.d/done.fish
 
 # Set settings for https://github.com/franciscolourenco/done
-set -U __done_min_cmd_duration 10000
-set -U __done_notification_urgency_level low
+#set -U __done_min_cmd_duration 10000
+#set -U __done_notification_urgency_level low
 
 ## Environment setup
 # Apply .profile: use this to put fish compatible .profile stuff in

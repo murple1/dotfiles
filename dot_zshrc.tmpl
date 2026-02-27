@@ -1,9 +1,22 @@
-fastfetch
+set ZELLIJ_AUTO_ATTACH true
+set ZEllij_AUTO_EXIT false
+
+if [[ -z "$ZELLIJ" ]]; then
+    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+        zellij attach home -c
+    else
+        zellij
+    fi
+
+    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+        exit
+    fi
+fi
+
 # source antidote https://antidote.sh/install
 source ~/.antidote/antidote.zsh
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
-
 
 {{ if eq .chezmoi.os "linux" -}}
 # Chezmoi Linux .zshrc contents
