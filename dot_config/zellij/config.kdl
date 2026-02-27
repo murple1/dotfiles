@@ -165,12 +165,14 @@ keybinds clear-defaults=true {
         bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         bind "Alt w" { CloseFocus; }
+        bind "Alt t" { NewTab; }
         bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl q" { Quit; }
+        bind "Ctrl d" { Detach; }
         bind "Ctrl u" { SwitchToMode "locked"; }
     }
     shared_except "locked" "entersearch" {

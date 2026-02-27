@@ -1,9 +1,9 @@
 set ZELLIJ_AUTO_ATTACH true
-set ZEllij_AUTO_EXIT false
+set ZEllIJ_AUTO_EXIT false
 
 if [[ -z "$ZELLIJ" ]]; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-        zellij attach home -c
+        zellij attach -c home
     else
         zellij
     fi
@@ -12,6 +12,8 @@ if [[ -z "$ZELLIJ" ]]; then
         exit
     fi
 fi
+
+fastfetch 
 
 # source antidote https://antidote.sh/install
 source ~/.antidote/antidote.zsh
