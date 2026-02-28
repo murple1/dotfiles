@@ -1,3 +1,12 @@
+## Run fastfetch as welcome message
+function fish_greeting
+    fastfetch 
+end
+
+
+{{ if eq .chezmoi.os "linux" -}}
+##----Chezmoi Linux config.fish.tmpl contents--------------------------
+
 if status is-interactive
 #auto-start Zellij
      # Configure auto-attach/exit to your likings (default is off).
@@ -15,15 +24,6 @@ if status is-interactive
          end
      end
 end
-
-## Run fastfetch as welcome message
-function fish_greeting
-    fastfetch 
-end
-
-
-{{ if eq .chezmoi.os "linux" -}}
-##----Chezmoi Linux config.fish.tmpl contents--------------------------
 
 ## Source from conf.d before our fish config
 #source /usr/share/cachyos-fish-config/conf.d/done.fish
@@ -153,3 +153,5 @@ fzf --fish | source
 
 ## Shell themeing # Install Starship https://starship.rs/guide/
 starship init fish | source
+
+

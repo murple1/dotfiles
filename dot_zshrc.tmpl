@@ -1,3 +1,14 @@
+fastfetch 
+
+# source antidote https://antidote.sh/install
+source ~/.antidote/antidote.zsh
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
+
+{{ if eq .chezmoi.os "linux" -}}
+# Chezmoi Linux .zshrc contents
+source /usr/share/cachyos-zsh-config/cachyos-config.zsh
+
 set ZELLIJ_AUTO_ATTACH true
 set ZEllIJ_AUTO_EXIT false
 
@@ -12,17 +23,6 @@ if [[ -z "$ZELLIJ" ]]; then
         exit
     fi
 fi
-
-fastfetch 
-
-# source antidote https://antidote.sh/install
-source ~/.antidote/antidote.zsh
-# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
-antidote load
-
-{{ if eq .chezmoi.os "linux" -}}
-# Chezmoi Linux .zshrc contents
-source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 
 {{ else if eq .chezmoi.os "darwin" -}}
 # MACOS .zshrc contents
