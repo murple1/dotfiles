@@ -9,11 +9,12 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
+    
     tab name="home" {
         pane split_direction="vertical" {
-            pane
             pane stacked=true {
-                pane command="spf"
+            	pane
+                pane command="yazi"
                 pane command="btop"
                 }
             }
