@@ -6,23 +6,33 @@ set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size
 cd ../..
 
 launch
+focus
 
-new_tab
+new_tab superfile
 layout tall
 enabled_layouts tall,fat,horizontal,vertical,stack
 set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [2], "window_groups": [{"id": 2, "window_ids": [2]}]}}
-cd ../..
+cd .
 
-launch 'kitty-unserialize-data={"id": 2, "cmd_at_shell_startup": "spf"}'
+launch 'kitty-unserialize-data={"id": 2, "cmd_at_shell_startup": ["spf"]}'
 focus
 
 new_tab
 layout tall
 enabled_layouts tall,fat,horizontal,vertical,stack
 set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [3], "window_groups": [{"id": 3, "window_ids": [3]}]}}
-cd ../..
+cd .
 
-launch 'kitty-unserialize-data={"id": 3, "cmd_at_shell_startup": "btop"}'
+launch 'kitty-unserialize-data={"id": 3, "cmd_at_shell_startup": ["btop"]}'
+focus
+
+new_tab server
+layout tall
+enabled_layouts tall,fat,horizontal,vertical,stack
+set_layout_state {"main_bias": [0.5, 0.5], "biased_map": {}, "opts": {"full_size": 1, "bias": 50, "mirrored": "n"}, "class": "Tall", "all_windows": {"active_group_idx": 0, "active_group_history": [6], "window_groups": [{"id": 6, "window_ids": [9]}]}}
+cd .
+
+launch 'kitty-unserialize-data={"id": 9, "cmd_at_shell_startup": ["/Applications/kitty.app/Contents/MacOS/kitten", "ssh", "--kitten=env=KITTY_SI_RUN_COMMAND_AT_STARTUP=kssh 100.111.104.86", "100.111.104.86"]}'
 focus
 
 focus_tab 0
